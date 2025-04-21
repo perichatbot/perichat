@@ -1,0 +1,9 @@
+Flask==2.3.3
+flask-cors==4.0.0
+requests==2.31.0
+spacy==3.7.2
+sentence-transformers==2.6.1
+PyPDF2==3.0.1
+wikipedia==1.4.0
+python-dotenv==1.0.1
+gunicorn==21.2.0
