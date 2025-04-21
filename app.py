@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import traceback
 from chatbot import Chatbot  # Ensure this imports from the updated chatbot class
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -36,4 +37,5 @@ def chat():
         return jsonify({"response": f"❌ Internal Server Error: {str(e)}"}), 500
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8000, debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Render assigns PORT dynamically
+    app.run(host="0.0.0.0", port=port, debug=False)  # 0.0.0.0 is mandatory for Render
