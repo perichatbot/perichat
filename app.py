@@ -37,5 +37,5 @@ def chat():
         return jsonify({"response": f"❌ Internal Server Error: {str(e)}"}), 500
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))  # Render assigns PORT dynamically
+    port = int(os.environ.get("PORT", 10000))  # Render assigns PORT dynamically
     app.run(host="0.0.0.0", port=port, debug=False)  # 0.0.0.0 is mandatory for Render
