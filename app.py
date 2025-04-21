@@ -2,7 +2,6 @@ from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import traceback
 from chatbot import Chatbot  # Ensure this imports from the updated chatbot class
-import os
 
 app = Flask(__name__)
 CORS(app)
@@ -18,7 +17,7 @@ except Exception as e:
 def home():
     return render_template("index.html")  # Ensure templates/index.html exists
 
-@app.route("./chat", methods=["POST"])
+@app.route("/chat", methods=["POST"])  # <-- Fixed route!
 def chat():
     if not bot:
         return jsonify({"response": "❌ Chatbot not initialized."}), 500
