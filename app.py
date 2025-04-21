@@ -18,7 +18,7 @@ except Exception as e:
 def home():
     return render_template("index.html")  # Ensure templates/index.html exists
 
-@app.route("/chat", methods=["POST"])
+@app.route("./chat", methods=["POST"])
 def chat():
     if not bot:
         return jsonify({"response": "❌ Chatbot not initialized."}), 500
