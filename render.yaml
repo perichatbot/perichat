@@ -6,4 +6,4 @@ services:
     startCommand: "gunicorn app:app"
     envVars:
       - key: GROQ_API_KEY
-        value: your_api_key_here
+        value: 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
